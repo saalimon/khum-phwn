@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Khum Phwn</title>
         <link rel="stylesheet" href="css/pico.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
     </head>
     <body>
         <header  class="container">
@@ -13,15 +15,17 @@
                 <h2>คำผวน หมายถึง น. คำที่พูดทวนกลับได้ เช่น ตกที่อิฐ ผวนเป็น ติดที่อก.</h2>
               </hgroup>
         </header >
-        <main class="container">
-            <form>
+        <div class="container">
+            <form id="spoonForm">
                 <label for="text">Normal Syllable</label>
                 <input type="text" id="text" name="text" placeholder="ตกที่อิฐ">
-                <small>Curabitur consequat lacus at lacus porta finibus.</small>
-                <input type="reset" value="Reset" onclick="event.preventDefault()">
-                <input type="submit" value="Submit" onclick="event.preventDefault()">
+                <h2 id="outp"></h2>
+                <small>* สามารถใช้สำหรับคำผวนที่มีความยาว 2 พยางค์เท่านั้น</small>
+                <input type="reset" value="Reset" onclick="document.getElementById('spoonForm').reset()">
+                <input type="button" value="Submit" onclick="tokenizer(document.getElementById('text').value)">
             </form>
-        </main>
+        </div>
+            
         <!-- Footer -->
         <footer class="container">
             <small>Built with <a href="https://picocss.com">Pico</a> ✖ <a href="https://github.com/saalimon">Saalimon</a></small>
